@@ -1,5 +1,5 @@
 name: shape
-description: Crie sua diente usando seus próprios dados e os dados da tabela TACO.
+description: Crie sua dieta usando seus próprios dados e os dados da tabela TACO.
 
 # The following line prevents the package from being accidentally published to
 # pub.dev using `pub publish`. This is preferred for private packages.
@@ -33,8 +33,8 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  pedantic: ^1.8.0
 
+  pedantic: ^1.9.0
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
 

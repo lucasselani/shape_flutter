@@ -1,6 +1,6 @@
 # SHAPE
 
-Crie sua diente usando seus próprios dados e os dados da tabela TACO.
+Crie sua dieta usando seus próprios dados e os dados da tabela TACO.
 
 ## Git Hooks
 Run the following commands:
