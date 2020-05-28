@@ -10,7 +10,7 @@ class CategoryRepository extends JsonRepository {
   Future<List<Category>> getCategories() async {
     if (categories == null) {
       var json = await loadJson();
-      var data = json != null ? json["categories"] as List<dynamic> : null;
+      var data = json != null ? json['categories'] as List<dynamic> : null;
       categories = data?.map((c) => Category.fromJson(c))?.toList();
       return categories;
     } else {
