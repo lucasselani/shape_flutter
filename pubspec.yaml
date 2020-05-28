@@ -10,8 +10,8 @@ dependencies:
   flutter:
     sdk: flutter
 
-  repository:
-    path: repository
+  use_case:
+    path: use_case
 
   cupertino_icons: ^0.1.3
   google_fonts: ^1.0.0
