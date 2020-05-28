@@ -1,6 +1,6 @@
-import 'package:repository/base/local_json_repository.dart';
-import 'package:repository/models/category.dart';
-import 'package:repository/utils/constants.dart';
+import 'package:repository/src/base/json_repository.dart';
+import 'package:repository/src/models/category.dart';
+import 'package:repository/src/utils/constants.dart';
 
 class CategoryRepository extends JsonRepository {
   List<Category> categories;

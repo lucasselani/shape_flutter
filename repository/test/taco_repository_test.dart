@@ -1,5 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:repository/repositories/taco_repository.dart';
+import 'package:repository/src/repositories/taco_repository.dart';
 
 void main() {
   test('general food list test', () async {

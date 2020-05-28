@@ -1,7 +1,6 @@
-import 'package:repository/base/local_json_repository.dart';
-import 'package:repository/utils/constants.dart';
-
-import '../models/food.dart';
+import 'package:repository/src/base/json_repository.dart';
+import 'package:repository/src/models/food.dart';
+import 'package:repository/src/utils/constants.dart';
 
 class TacoRepository extends JsonRepository {
   List<Food> foods;
