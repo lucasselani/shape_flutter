@@ -1,6 +1,6 @@
 #!/bin/sh
 
-echo "Running static analysis..."
+echo "Running unit tests..."
 
 # Format code using Flutter format than Analyze it according to pedantic rules
 flutter test .
