@@ -1,0 +1,15 @@
+#!/bin/sh
+
+echo "Running static analysis..."
+
+# Format code using Flutter format than Analyze it according to pedantic rules
+flutter test .
+status=$?
+if [ "$status" = 0 ] ; then
+    git add .
+    echo "Problems found on Unit Tests, aborting push."
+    exit 0
+else
+    echo 1>&2 "No problems found on Unit Tests, pushing."
+    exit 1
+fi
