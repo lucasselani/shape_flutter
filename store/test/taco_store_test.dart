@@ -1,7 +1,7 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
 import 'package:repository/repository.dart';
-import 'package:store/src/stores/taco_store.dart';
+import 'package:store/store.dart';
 
 import 'base/mock_repository.dart';
 

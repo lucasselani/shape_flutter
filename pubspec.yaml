@@ -1,6 +1,6 @@
 name: shape
 description: Crie sua dieta usando seus próprios dados e os dados da tabela TACO.
-publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+publish_to: "none" # Remove this line if you wish to publish to pub.dev
 version: 1.0.0+1
 
 environment:
@@ -21,9 +21,6 @@ dev_dependencies:
     sdk: flutter
 
   mockito: ^4.1.1
-  #pedantic: ^1.9.0
 
 flutter:
   uses-material-design: true
-  assets:
-    - repository/assets/json/
