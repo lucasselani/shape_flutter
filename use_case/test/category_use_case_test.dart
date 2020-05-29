@@ -3,7 +3,7 @@ import 'package:mockito/mockito.dart';
 import 'package:repository/repository.dart';
 import 'package:use_case/src/use_cases/category_use_case.dart';
 
-class MockRepository extends Mock implements JsonRepository {}
+import 'base/mock_repository.dart';
 
 void main() {
   test('category use case list', () async {
