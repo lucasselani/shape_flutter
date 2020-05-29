@@ -12,13 +12,13 @@ mixin _$TacoStore on _TacoBase, Store {
   final _$dataAtom = Atom(name: '_TacoBase.data');
 
   @override
-  List<Category> get data {
+  ObservableFuture<List<Food>> get data {
     _$dataAtom.reportRead();
     return super.data;
   }
 
   @override
-  set data(List<Category> value) {
+  set data(ObservableFuture<List<Food>> value) {
     _$dataAtom.reportWrite(value, super.data, () {
       super.data = value;
     });

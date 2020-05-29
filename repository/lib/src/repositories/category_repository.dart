@@ -1,11 +1,10 @@
 import 'package:repository/src/base/json_repository.dart';
 import 'package:repository/src/models/category.dart';
-import 'package:repository/src/utils/constants.dart';
 
 class CategoryRepository extends JsonRepository<List<Category>> {
   List<Category> categories;
 
-  CategoryRepository() : super(CATEGORY_PATH);
+  CategoryRepository(String json) : super(json);
 
   @override
   Future<List<Category>> getData() async {

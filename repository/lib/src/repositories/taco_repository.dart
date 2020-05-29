@@ -1,11 +1,10 @@
 import 'package:repository/src/base/json_repository.dart';
 import 'package:repository/src/models/food.dart';
-import 'package:repository/src/utils/constants.dart';
 
 class TacoRepository extends JsonRepository<List<Food>> {
   List<Food> foods;
 
-  TacoRepository() : super(TACO_PATH);
+  TacoRepository(String json) : super(json);
 
   @override
   Future<List<Food>> getData() async {

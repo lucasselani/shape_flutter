@@ -12,13 +12,13 @@ mixin _$CategoryStore on _CategoryBase, Store {
   final _$dataAtom = Atom(name: '_CategoryBase.data');
 
   @override
-  List<Category> get data {
+  ObservableFuture<List<Category>> get data {
     _$dataAtom.reportRead();
     return super.data;
   }
 
   @override
-  set data(List<Category> value) {
+  set data(ObservableFuture<List<Category>> value) {
     _$dataAtom.reportWrite(value, super.data, () {
       super.data = value;
     });

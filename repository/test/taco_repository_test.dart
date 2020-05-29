@@ -1,25 +1,22 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:repository/src/repositories/taco_repository.dart';
+import 'package:mockito/mockito.dart';
+import 'package:repository/repository.dart';
+
+class TestTacoRepository extends Mock implements TacoRepository {}
 
 void main() {
-  test('foods list test', () async {
+  var repository = TestTacoRepository();
+  when(repository.getData()).thenAnswer((_) async => [Food()]);
+  when(repository.getDataNow()).thenReturn([Food()]);
+
+  test('categories list test', () async {
     TestWidgetsFlutterBinding.ensureInitialized();
-    var repository = TacoRepository();
     var foods = await repository.getData();
     expect(foods.isNotEmpty, true);
   });
 
-  test('foods list now test', () async {
+  test('categories list now test', () async {
     TestWidgetsFlutterBinding.ensureInitialized();
-    var repository = TacoRepository();
-    var foods = await repository.getDataNow();
-    expect(foods, null);
-  });
-
-  test('foods list now after async test', () async {
-    TestWidgetsFlutterBinding.ensureInitialized();
-    var repository = TacoRepository();
-    await repository.getData();
     var foods = await repository.getDataNow();
     expect(foods.isNotEmpty, true);
   });

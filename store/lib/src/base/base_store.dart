@@ -1,3 +1,4 @@
+import 'package:mobx/mobx.dart';
 import 'package:repository/repository.dart';
 
 abstract class BaseStore<T> {
@@ -5,7 +6,8 @@ abstract class BaseStore<T> {
 
   BaseStore(this.repository);
 
-  T data;
+  ObservableFuture<T> data;
 
   Future getData();
+  T getDataNow();
 }

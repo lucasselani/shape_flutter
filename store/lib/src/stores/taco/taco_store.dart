@@ -6,14 +6,18 @@ part 'taco_store.g.dart';
 
 class TacoStore = _TacoBase with _$TacoStore;
 
-abstract class _TacoBase extends BaseStore<List<Category>> with Store {
+abstract class _TacoBase extends BaseStore<List<Food>> with Store {
   _TacoBase(repository) : super(repository);
 
   @override
   @observable
-  List<Category> data;
+  ObservableFuture<List<Food>> data;
 
   @override
   @action
-  Future getData() => repository.getData();
+  Future getData() => data = ObservableFuture(repository.getData());
+
+  @override
+  List<Food> getDataNow() =>
+      data.result != null ? data.result as List<Food> : null;
 }

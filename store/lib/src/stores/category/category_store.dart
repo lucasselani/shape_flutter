@@ -11,9 +11,13 @@ abstract class _CategoryBase extends BaseStore<List<Category>> with Store {
 
   @override
   @observable
-  List<Category> data;
+  ObservableFuture<List<Category>> data;
 
   @override
   @action
-  Future getData() => repository.getData();
+  Future getData() => data = ObservableFuture(repository.getData());
+
+  @override
+  List<Category> getDataNow() =>
+      data.result != null ? data.result as List<Category> : null;
 }
