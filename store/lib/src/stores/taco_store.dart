@@ -1,12 +1,12 @@
 import 'package:mobx/mobx.dart';
 import 'package:repository/repository.dart';
-import 'package:use_case/src/base/base_use_case.dart';
+import 'package:store/src/base/base_store.dart';
 
-part 'taco_use_case.g.dart';
+part 'taco_store.g.dart';
 
-class TacoUseCase = _TacoBase with _$TacoUseCase;
+class TacoStore = _TacoBase with _$TacoStore;
 
-abstract class _TacoBase extends BaseUseCase<List<Category>> with Store {
+abstract class _TacoBase extends BaseStore<List<Category>> with Store {
   _TacoBase(repository) : super(repository);
 
   @override

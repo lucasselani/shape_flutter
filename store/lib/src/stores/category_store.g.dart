@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'category_use_case.dart';
+part of 'category_store.dart';
 
 // **************************************************************************
 // StoreGenerator
@@ -8,7 +8,7 @@ part of 'category_use_case.dart';
 
 // ignore_for_file: non_constant_identifier_names, unnecessary_lambdas, prefer_expression_function_bodies, lines_longer_than_80_chars, avoid_as, avoid_annotating_with_dynamic
 
-mixin _$CategoryUseCase on _CategoryBase, Store {
+mixin _$CategoryStore on _CategoryBase, Store {
   final _$dataAtom = Atom(name: '_CategoryBase.data');
 
   @override

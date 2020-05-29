@@ -1,12 +1,12 @@
 import 'package:mobx/mobx.dart';
 import 'package:repository/repository.dart';
-import 'package:use_case/src/base/base_use_case.dart';
+import 'package:store/src/base/base_store.dart';
 
-part 'category_use_case.g.dart';
+part 'category_store.g.dart';
 
-class CategoryUseCase = _CategoryBase with _$CategoryUseCase;
+class CategoryStore = _CategoryBase with _$CategoryStore;
 
-abstract class _CategoryBase extends BaseUseCase<List<Category>> with Store {
+abstract class _CategoryBase extends BaseStore<List<Category>> with Store {
   _CategoryBase(repository) : super(repository);
 
   @override

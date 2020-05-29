@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'taco_use_case.dart';
+part of 'taco_store.dart';
 
 // **************************************************************************
 // StoreGenerator
@@ -8,7 +8,7 @@ part of 'taco_use_case.dart';
 
 // ignore_for_file: non_constant_identifier_names, unnecessary_lambdas, prefer_expression_function_bodies, lines_longer_than_80_chars, avoid_as, avoid_annotating_with_dynamic
 
-mixin _$TacoUseCase on _TacoBase, Store {
+mixin _$TacoStore on _TacoBase, Store {
   final _$dataAtom = Atom(name: '_TacoBase.data');
 
   @override

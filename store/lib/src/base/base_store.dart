@@ -1,9 +1,9 @@
 import 'package:repository/repository.dart';
 
-abstract class BaseUseCase<T> {
+abstract class BaseStore<T> {
   JsonRepository repository;
 
-  BaseUseCase(this.repository);
+  BaseStore(this.repository);
 
   T data;
 
