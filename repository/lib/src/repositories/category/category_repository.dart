@@ -1,13 +1,22 @@
 import 'package:repository/src/base/json_repository.dart';
+import 'package:repository/src/base/repository.dart';
 import 'package:repository/src/models/category.dart';
 
-class CategoryRepository extends JsonRepository<List<Category>> {
+abstract class CategoryRepository implements Repository {
   List<Category> categories;
 
-  CategoryRepository(String json) : super(json);
+  Future<List<Category>> getCategories();
+  List<Category> getCategoriesNow();
+}
+
+class CategoryRepositoryImpl extends JsonLoader implements CategoryRepository {
+  @override
+  List<Category> categories;
+
+  CategoryRepositoryImpl(String json) : super(json);
 
   @override
-  Future<List<Category>> getData() async {
+  Future<List<Category>> getCategories() async {
     if (categories == null) {
       var json = await loadJson();
       var data = json != null ? json['categories'] as List<dynamic> : null;
@@ -19,7 +28,7 @@ class CategoryRepository extends JsonRepository<List<Category>> {
   }
 
   @override
-  List<Category> getDataNow() {
+  List<Category> getCategoriesNow() {
     return categories;
   }
 }

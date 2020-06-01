@@ -4,7 +4,7 @@ import 'package:mobx/mobx.dart';
 
 abstract class StoreObserver<Data> extends StatelessWidget {
   Widget builder(Data data);
-  ObservableFuture<Data> useFuture();
+  ObservableFuture<Data> get future;
   void fetch();
 
   StoreObserver({Key key}) : super(key: key) {
@@ -13,7 +13,6 @@ abstract class StoreObserver<Data> extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var future = useFuture();
     return Observer(
       builder: (_) {
         switch (future.status) {

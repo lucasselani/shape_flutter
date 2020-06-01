@@ -7,6 +7,6 @@ const categoryPath = 'assets/json/taco_categories.json';
 
 void setupDI() {
   GetIt getIt = GetIt.I;
-  getIt.registerSingleton(TacoStore(TacoRepository(tacoPath)));
-  getIt.registerSingleton(CategoryStore(CategoryRepository(categoryPath)));
+  getIt.registerSingleton(FoodStore(FoodRepositoryImpl(tacoPath)));
+  getIt.registerSingleton(CategoryStore(CategoryRepositoryImpl(categoryPath)));
 }

@@ -6,18 +6,15 @@ part 'category_store.g.dart';
 
 class CategoryStore = _CategoryBase with _$CategoryStore;
 
-abstract class _CategoryBase extends BaseStore<List<Category>> with Store {
+abstract class _CategoryBase extends BaseStore<CategoryRepository> with Store {
   _CategoryBase(repository) : super(repository);
 
-  @override
   @observable
-  ObservableFuture<List<Category>> data;
+  ObservableFuture<List<Category>> categories;
 
-  @override
   @action
-  Future getData() => data = ObservableFuture(repository.getData());
+  Future getCategories() =>
+      categories = ObservableFuture(repository.getCategories());
 
-  @override
-  List<Category> getDataNow() =>
-      data.result != null ? data.result as List<Category> : null;
+  List<Category> getCategoriesNow() => repository.getCategoriesNow();
 }

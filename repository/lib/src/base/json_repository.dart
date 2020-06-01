@@ -2,15 +2,12 @@ import 'dart:convert';
 
 import 'package:flutter/services.dart';
 
-abstract class JsonRepository<T> {
+abstract class JsonLoader {
   String _json;
 
-  JsonRepository(this._json);
+  JsonLoader(this._json);
 
-  Future<T> getData();
-  T getDataNow();
-
-  dynamic loadJson() async => json != null
+  dynamic loadJson() async => _json != null
       ? await jsonDecode(await rootBundle.loadString(_json))
       : null;
 }

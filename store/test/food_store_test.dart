@@ -3,15 +3,15 @@ import 'package:mockito/mockito.dart';
 import 'package:repository/repository.dart';
 import 'package:store/store.dart';
 
-import 'base/mock_repository.dart';
+class MockRepository extends Mock implements FoodRepository {}
 
 void main() {
-  test('category use case list', () async {
+  test('food store list', () async {
     TestWidgetsFlutterBinding.ensureInitialized();
     var repository = MockRepository();
-    var store = TacoStore(repository);
-    when(repository.getData()).thenAnswer((_) async => [Food()]);
-    var list = await store.getData();
+    var store = FoodStore(repository);
+    when(repository.getFoods()).thenAnswer((_) async => [Food()]);
+    var list = await store.getFoods();
     expect(list.isNotEmpty, true);
     expect(list is List<Food>, true);
     expect(list[0] is Food, true);

@@ -1,24 +1,24 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
 import 'package:repository/repository.dart';
-import 'package:repository/src/repositories/category_repository.dart';
+import 'package:repository/src/repositories/category/category_repository.dart';
 
 class TestCategoryRepository extends Mock implements CategoryRepository {}
 
 void main() {
   var repository = TestCategoryRepository();
-  when(repository.getData()).thenAnswer((_) async => [Category()]);
-  when(repository.getDataNow()).thenReturn([Category()]);
+  when(repository.getCategories()).thenAnswer((_) async => [Category()]);
+  when(repository.getCategoriesNow()).thenReturn([Category()]);
 
   test('categories list test', () async {
     TestWidgetsFlutterBinding.ensureInitialized();
-    var categories = await repository.getData();
+    var categories = await repository.getCategories();
     expect(categories.isNotEmpty, true);
   });
 
   test('categories list now test', () async {
     TestWidgetsFlutterBinding.ensureInitialized();
-    var categories = await repository.getDataNow();
+    var categories = await repository.getCategoriesNow();
     expect(categories.isNotEmpty, true);
   });
 }

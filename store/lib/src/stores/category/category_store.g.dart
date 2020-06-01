@@ -9,18 +9,18 @@ part of 'category_store.dart';
 // ignore_for_file: non_constant_identifier_names, unnecessary_lambdas, prefer_expression_function_bodies, lines_longer_than_80_chars, avoid_as, avoid_annotating_with_dynamic
 
 mixin _$CategoryStore on _CategoryBase, Store {
-  final _$dataAtom = Atom(name: '_CategoryBase.data');
+  final _$categoriesAtom = Atom(name: '_CategoryBase.categories');
 
   @override
-  ObservableFuture<List<Category>> get data {
-    _$dataAtom.reportRead();
-    return super.data;
+  ObservableFuture<List<Category>> get categories {
+    _$categoriesAtom.reportRead();
+    return super.categories;
   }
 
   @override
-  set data(ObservableFuture<List<Category>> value) {
-    _$dataAtom.reportWrite(value, super.data, () {
-      super.data = value;
+  set categories(ObservableFuture<List<Category>> value) {
+    _$categoriesAtom.reportWrite(value, super.categories, () {
+      super.categories = value;
     });
   }
 
@@ -28,11 +28,11 @@ mixin _$CategoryStore on _CategoryBase, Store {
       ActionController(name: '_CategoryBase');
 
   @override
-  Future<dynamic> getData() {
+  Future<dynamic> getCategories() {
     final _$actionInfo = _$_CategoryBaseActionController.startAction(
-        name: '_CategoryBase.getData');
+        name: '_CategoryBase.getCategories');
     try {
-      return super.getData();
+      return super.getCategories();
     } finally {
       _$_CategoryBaseActionController.endAction(_$actionInfo);
     }
@@ -41,7 +41,7 @@ mixin _$CategoryStore on _CategoryBase, Store {
   @override
   String toString() {
     return '''
-data: ${data}
+categories: ${categories}
     ''';
   }
 }

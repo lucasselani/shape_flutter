@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:shape/config/di.dart';
 import 'package:shape/resources/strings.dart';
 
-import 'config/router.dart';
+import 'config/route/router.dart';
 
 void main() {
   setupDI();
@@ -15,7 +15,7 @@ class ShapeApp extends StatelessWidget {
     return MaterialApp(
       title: Strings.appName,
       theme: ThemeData(),
-      initialRoute: Routes.foodsScreen,
+      initialRoute: Routes.homeScreen,
       onGenerateRoute: Router.generateRoute,
     );
   }

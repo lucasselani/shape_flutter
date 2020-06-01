@@ -4,11 +4,11 @@ import 'package:get_it/get_it.dart';
 import 'package:mobx/src/api/async.dart';
 import 'package:repository/repository.dart';
 import 'package:shape/core/store_observer.dart';
-import 'package:shape/ui/widget/foods_item.dart';
+import 'package:shape/ui/screen/foods/foods_item.dart';
 import 'package:store/store.dart';
 
 class FoodsObserver extends StoreObserver<List<Food>> {
-  final TacoStore store = GetIt.I<TacoStore>();
+  final FoodStore store = GetIt.I<FoodStore>();
 
   @override
   Widget builder(List<Food> data) => ListView.builder(
@@ -18,8 +18,8 @@ class FoodsObserver extends StoreObserver<List<Food>> {
       });
 
   @override
-  ObservableFuture<List<Food>> useFuture() => store.data;
+  void fetch() => store.getFoods;
 
   @override
-  void fetch() => store.getData();
+  ObservableFuture<List<Food>> get future => store.foods;
 }

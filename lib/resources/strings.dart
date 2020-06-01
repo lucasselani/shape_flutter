@@ -11,4 +11,8 @@ class Strings {
   static const time = 'TEMPO';
   static const yes = 'SIM';
   static const no = 'NÃO';
+
+  // bottom bar
+  static const plans = 'Planos';
+  static const foods = 'Alimentos';
 }

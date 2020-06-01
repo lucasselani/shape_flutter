@@ -1,13 +1,7 @@
-import 'package:mobx/mobx.dart';
 import 'package:repository/repository.dart';
 
-abstract class BaseStore<T> {
-  JsonRepository repository;
+abstract class BaseStore<T extends Repository> {
+  T repository;
 
   BaseStore(this.repository);
-
-  ObservableFuture<T> data;
-
-  Future getData();
-  T getDataNow();
 }
