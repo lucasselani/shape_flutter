@@ -1,5 +1,5 @@
-import 'package:repository/src/base/json_repository.dart';
 import 'package:repository/src/base/repository.dart';
+import 'package:repository/src/core/json_loader.dart';
 import 'package:repository/src/models/category.dart';
 
 abstract class CategoryRepository implements Repository {

@@ -1,7 +1,6 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
 import 'package:repository/repository.dart';
-import 'package:repository/src/repositories/category/category_repository.dart';
 
 class TestCategoryRepository extends Mock implements CategoryRepository {}
 
