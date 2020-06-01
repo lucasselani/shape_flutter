@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:shape/config/di.dart';
 import 'package:shape/resources/strings.dart';
+import 'package:shape/resources/themes.dart';
 
 import 'config/route/router.dart';
 
@@ -14,7 +15,7 @@ class ShapeApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: Strings.appName,
-      theme: ThemeData(),
+      theme: Themes.appTheme(context),
       initialRoute: Routes.homeScreen,
       onGenerateRoute: Router.generateRoute,
     );

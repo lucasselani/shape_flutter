@@ -31,3 +31,4 @@ flutter:
 
   assets:
     - assets/json/
+    - assets/google-fonts/

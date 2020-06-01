@@ -13,12 +13,10 @@ class FoodsObserver extends StoreObserver<List<Food>> {
   @override
   Widget builder(List<Food> data) => ListView.builder(
       itemCount: data.length,
-      itemBuilder: (_, int index) {
-        return FoodsItem(food: data[index]);
-      });
+      itemBuilder: (_, int index) => FoodsItem(food: data[index]));
 
   @override
-  void fetch() => store.getFoods;
+  void fetch() => store.getFoods();
 
   @override
   ObservableFuture<List<Food>> get future => store.foods;

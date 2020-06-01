@@ -19,9 +19,9 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget _createBody() {
     switch (_currentIndex) {
       case 0:
-        return FoodsScreen();
-      case 1:
         return PlansScreen();
+      case 1:
+        return FoodsScreen();
       default:
         return Center();
     }

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shape/resources/strings.dart';
+import 'package:shape/resources/styles.dart';
 
 class BottomNavScaffold extends StatelessWidget {
   final Widget body;
@@ -22,11 +23,11 @@ class BottomNavScaffold extends StatelessWidget {
           items: [
             BottomNavigationBarItem(
                 icon: Icon(Icons.assessment),
-                title: Text(Strings.plans),
+                title: Text(Strings.plans, style: Styles.appBar),
                 backgroundColor: Colors.amber),
             BottomNavigationBarItem(
                 icon: Icon(Icons.fastfood),
-                title: Text(Strings.foods),
+                title: Text(Strings.foods, style: Styles.appBar),
                 backgroundColor: Colors.red)
           ]),
     );
