@@ -12,6 +12,6 @@ class FoodsItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListTile(
         title: Text(food.description, style: Styles.title()),
-        subtitle: Text(food.category, style: Styles.label()));
+        subtitle: Text(food.categoryId.toString(), style: Styles.label()));
   }
 }

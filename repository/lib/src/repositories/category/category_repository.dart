@@ -18,9 +18,8 @@ class CategoryRepositoryImpl extends JsonLoader implements CategoryRepository {
   @override
   Future<List<Category>> getCategories() async {
     if (categories == null) {
-      var json = await loadJson();
-      var data = json != null ? json['categories'] as List<dynamic> : null;
-      categories = data?.map((c) => Category.fromJson(c))?.toList();
+      var data = await loadJson() as List<dynamic>;
+      categories = data?.map((food) => Category.fromJson(food))?.toList();
       return categories;
     } else {
       return categories;
