@@ -2,7 +2,7 @@ import 'package:flutter/services.dart';
 import 'package:hive/hive.dart';
 import 'package:path_provider/path_provider.dart';
 
-class Database {
+class AppHive {
   static void initialize() async {
     try {
       var appDocumentDir = await getApplicationDocumentsDirectory();

@@ -1,6 +1,4 @@
-import 'package:database/src/database.dart';
-import 'package:database/src/model/plan.dart';
-import 'package:database/src/provider/plan_provider.dart';
+import 'package:database/database.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:hive/hive.dart';
 
@@ -21,7 +19,7 @@ void main() {
           ..unit = 'g');
 
   test('create box', () async {
-    await Database.initialize();
+    await AppHive.initialize();
     provider = PlanProvider(boxName);
     await provider.openBox();
     box = Hive.box<Plan>(boxName);

@@ -4,8 +4,9 @@ import 'package:get_it/get_it.dart';
 import 'package:mobx/src/api/async.dart';
 import 'package:repository/repository.dart';
 import 'package:shape/core/store_observer.dart';
-import 'package:shape/ui/screen/foods/foods_item.dart';
 import 'package:store/store.dart';
+
+import 'foods_item.dart';
 
 class FoodsObserver extends StoreObserver<List<Food>> {
   final FoodStore store = GetIt.I<FoodStore>();

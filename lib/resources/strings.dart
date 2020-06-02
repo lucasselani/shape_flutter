@@ -15,4 +15,8 @@ class Strings {
   // bottom bar
   static const plans = 'Planos';
   static const foods = 'Alimentos';
+
+  // empty state
+  static const plansEmpty =
+      "Nenhum plano cadastrado, clique em '+' para criar um novo plano.";
 }

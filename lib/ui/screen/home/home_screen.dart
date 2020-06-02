@@ -1,8 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:shape/ui/screen/foods/foods_screen.dart';
 import 'package:shape/ui/screen/home/bottom_navigation_scaffold.dart';
-import 'package:shape/ui/screen/plans/plans_screen.dart';
+
+import 'foods/foods_screen.dart';
+import 'plans/plans_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   @override

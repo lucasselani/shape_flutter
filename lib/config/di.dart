@@ -1,4 +1,4 @@
-import 'package:database/export.dart';
+import 'package:database/database.dart';
 import 'package:get_it/get_it.dart';
 import 'package:repository/repository.dart';
 import 'package:store/store.dart';
@@ -8,7 +8,7 @@ const categoryPath = 'assets/json/categories.json';
 const planBoxName = 'plans';
 
 void setupDB() async {
-  await Database.initialize();
+  await AppHive.initialize();
 }
 
 void setupDI() async {
