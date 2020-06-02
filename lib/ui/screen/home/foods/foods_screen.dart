@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-
-import 'foods_observer.dart';
+import 'package:shape/ui/widget/food/foods_observer.dart';
 
 class FoodsScreen extends StatelessWidget {
   @override

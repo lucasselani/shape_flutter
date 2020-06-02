@@ -16,9 +16,10 @@ class PlanAdapter extends TypeAdapter<Plan> {
     var fields = <int, dynamic>{
       for (var i = 0; i < numOfFields; i++) reader.readByte(): reader.read(),
     };
-    return Plan()
-      ..name = fields[0] as String
-      ..foods = (fields[1] as List)?.cast<PlanFoods>();
+    return Plan(
+      name: fields[0] as String,
+      foods: (fields[1] as List)?.cast<PlanFoods>(),
+    );
   }
 
   @override

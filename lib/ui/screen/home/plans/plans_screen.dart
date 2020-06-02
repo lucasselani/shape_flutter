@@ -3,10 +3,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get_it/get_it.dart';
 import 'package:shape/config/route/router.dart';
-import 'package:shape/resources/colors.dart';
-import 'package:shape/resources/heroes.dart';
 import 'package:shape/resources/strings.dart';
 import 'package:shape/resources/styles.dart';
+import 'package:shape/ui/widget/general/add_fab.dart';
 
 import 'plans_item.dart';
 
@@ -14,7 +13,9 @@ class PlansScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) => Scaffold(
         body: _PlansBody(),
-        floatingActionButton: _PlansFAB(),
+        floatingActionButton: AddFAB(
+            onPressed: () =>
+                Navigator.pushNamed(context, Routes.createPlanScreen)),
       );
 }
 
@@ -40,17 +41,4 @@ class _PlansBody extends StatelessWidget {
           itemBuilder: (_, index) => PlansItem(plan: list[index]));
     }
   }
-}
-
-class _PlansFAB extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) => FloatingActionButton(
-        onPressed: () => Navigator.pushNamed(context, Routes.createPlanScreen),
-        backgroundColor: AppColors.primaryColor,
-        heroTag: Heroes.fabAdd,
-        child: Icon(
-          Icons.add,
-          color: AppColors.white,
-        ),
-      );
 }
