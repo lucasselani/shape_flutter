@@ -5,8 +5,10 @@ import 'package:shape/resources/themes.dart';
 
 import 'config/route/router.dart';
 
-void main() {
-  setupDI();
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await setupDB();
+  await setupDI();
   runApp(ShapeApp());
 }
 

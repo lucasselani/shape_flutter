@@ -44,4 +44,4 @@ app.*.map.json
 
 
 # Project test files
-shape.db
+.shape_db
