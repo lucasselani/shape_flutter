@@ -1,6 +1,8 @@
 import 'package:mobx/mobx.dart';
 import 'package:repository/repository.dart';
 import 'package:store/src/base/base_store.dart';
+import 'package:store/src/extension/observable_list.dart';
+import 'package:store/src/extension/string.dart';
 
 part 'food_store.g.dart';
 
@@ -10,10 +12,14 @@ abstract class _FoodBase extends BaseStore<FoodRepository> with Store {
   _FoodBase(repository) : super(repository);
 
   @observable
-  ObservableFuture<List<Food>> foods;
+  ObservableFuture<ObservableList<Food>> foods;
 
   @action
-  Future getFoods() => foods = ObservableFuture(repository.getFoods());
+  Future getFoods() => foods = repository.getFoods().toObservable();
 
-  List<Food> getFoodsNow() => repository.getFoodsNow();
+  @action
+  Future getFilteredFoods(String text) => foods = repository
+      .getFoodsNow()
+      .where((food) => food.description.has(text))
+      .toObservable();
 }

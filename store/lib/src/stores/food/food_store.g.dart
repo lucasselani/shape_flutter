@@ -12,13 +12,13 @@ mixin _$FoodStore on _FoodBase, Store {
   final _$foodsAtom = Atom(name: '_FoodBase.foods');
 
   @override
-  ObservableFuture<List<Food>> get foods {
+  ObservableFuture<ObservableList<Food>> get foods {
     _$foodsAtom.reportRead();
     return super.foods;
   }
 
   @override
-  set foods(ObservableFuture<List<Food>> value) {
+  set foods(ObservableFuture<ObservableList<Food>> value) {
     _$foodsAtom.reportWrite(value, super.foods, () {
       super.foods = value;
     });

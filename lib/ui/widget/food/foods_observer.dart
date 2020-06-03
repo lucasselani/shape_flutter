@@ -9,11 +9,11 @@ import 'package:store/store.dart';
 
 import 'foods_item.dart';
 
-class FoodsObserver extends StoreObserver<List<Food>> {
+class FoodsObserver extends StoreObserver<ObservableList<Food>> {
   final FoodStore store = GetIt.I<FoodStore>();
 
   @override
-  Widget builder(List<Food> foods) => Column(
+  Widget builder(ObservableList<Food> foods) => Column(
         children: <Widget>[
           SizedBox(height: 32),
           SearchBar(onSearch: _filterList),
@@ -31,7 +31,7 @@ class FoodsObserver extends StoreObserver<List<Food>> {
   void fetch() => store.getFoods();
 
   @override
-  ObservableFuture<List<Food>> get future => store.foods;
+  ObservableFuture<ObservableList<Food>> get future => store.foods;
 
-  void _filterList(String text) => null;
+  void _filterList(String text) => store.getFilteredFoods(text);
 }
