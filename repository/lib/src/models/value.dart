@@ -12,6 +12,7 @@ class Value {
   }
 
   Map<String, dynamic> toJson() {
+    if (this.qty == null || this.unit == null) return null;
     var data = Map<String, dynamic>();
     data['qty'] = this.qty;
     data['unit'] = this.unit;

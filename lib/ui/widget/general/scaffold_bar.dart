@@ -5,7 +5,7 @@ class ScaffoldBar extends AppBar {
   ScaffoldBar(BuildContext context, {@required Widget title, Widget trailing})
       : super(
           title: title,
-          actions: trailing ?? <Widget>[trailing],
+          actions: trailing != null ? <Widget>[trailing] : null,
           backgroundColor: AppColors.primaryColor,
           elevation: 0,
           leading: Center(

@@ -13,18 +13,17 @@ class FoodsObserver extends StoreObserver<ObservableList<Food>> {
   final FoodStore store = GetIt.I<FoodStore>();
 
   @override
-  Widget builder(ObservableList<Food> foods) => Column(
-        children: <Widget>[
-          SizedBox(height: 32),
-          SearchBar(onSearch: _filterList),
-          SizedBox(height: 16),
-          Expanded(
-              child: ListView.builder(
-                  itemCount: foods.length,
-                  itemBuilder: (_, int index) =>
-                      FoodsItem(food: foods[index]))),
-          SizedBox(height: 16),
-        ],
+  Widget builder(ObservableList<Food> foods) => SafeArea(
+        child: Column(
+          children: <Widget>[
+            SearchBar(onSearch: _filterList),
+            Expanded(
+                child: ListView.builder(
+                    itemCount: foods.length,
+                    itemBuilder: (_, int index) =>
+                        FoodsItem(food: foods[index]))),
+          ],
+        ),
       );
 
   @override

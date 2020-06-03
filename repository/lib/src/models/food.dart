@@ -1,4 +1,6 @@
 import 'package:repository/src/models/attributes.dart';
+import 'package:repository/src/models/nutrition_info.dart';
+import 'package:repository/src/models/value.dart';
 
 class Food {
   num id;
@@ -39,4 +41,12 @@ class Food {
     }
     return data;
   }
+
+  NutritionInfo getNutritionInfo() => NutritionInfo(
+        base: Value(qty: baseQty, unit: baseUnit),
+        energy: attributes.energy,
+        carbohydrate: attributes.carbohydrate,
+        protein: attributes.protein,
+        lipid: attributes.lipid,
+      )..createNutritionMaps(attributes);
 }

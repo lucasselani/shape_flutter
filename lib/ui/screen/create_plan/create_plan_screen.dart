@@ -32,7 +32,6 @@ class _CreatePlanState extends State<CreatePlanScreen> {
             _PlanFoods(foods),
             Expanded(child: Container()),
             _CreateButton(foods: foods, name: 'Teste'),
-            SizedBox(height: 16.0),
           ],
         ),
       ),
@@ -52,10 +51,11 @@ class _PlanFoods extends StatelessWidget {
   _PlanFoods(this.foods);
 
   @override
-  Widget build(BuildContext context) => ListView.builder(
-      shrinkWrap: true,
-      itemCount: foods.length,
-      itemBuilder: (_, index) => PlanFoodItem(food: foods[index]));
+  Widget build(BuildContext context) => Expanded(
+        child: ListView.builder(
+            itemCount: foods.length,
+            itemBuilder: (_, index) => PlanFoodItem(food: foods[index])),
+      );
 }
 
 class _CreateButton extends StatelessWidget {

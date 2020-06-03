@@ -11,6 +11,7 @@ class Strings {
   static const time = 'TEMPO';
   static const yes = 'SIM';
   static const no = 'NÃO';
+  static const close = 'FECHAR';
   static const searchBar = 'Digite um nome...';
 
   // bottom bar
@@ -26,4 +27,5 @@ class Strings {
 
   // select food
   static const selectFoodTitle = 'Selecione um alimento';
+  static const nutritionInfoTitle = 'Informação Nutricional';
 }

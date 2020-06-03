@@ -33,11 +33,17 @@ class _SearchBarState extends State<SearchBar> {
 
   @override
   Widget build(BuildContext context) => Container(
-        padding: EdgeInsets.symmetric(horizontal: 4, vertical: 2),
-        child: TextField(
-          style: Styles.title(biggerFont: true),
-          decoration: _buildInputDecoration(),
-          onChanged: (String text) => onSearch(text),
+        padding: EdgeInsets.fromLTRB(16.0, 16.0, 16.0, 0),
+        child: Card(
+          elevation: 2,
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 8.0),
+            child: TextField(
+              style: Styles.title(biggerFont: true),
+              decoration: _buildInputDecoration(),
+              onChanged: (String text) => onSearch(text),
+            ),
+          ),
         ),
       );
 }
