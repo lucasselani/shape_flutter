@@ -25,5 +25,6 @@ class PlanFoods extends HiveObject {
   @HiveField(2)
   String unit;
 
-  String name;
+  PlanFoods(
+      {@required this.foodId, @required this.quantity, @required this.unit});
 }

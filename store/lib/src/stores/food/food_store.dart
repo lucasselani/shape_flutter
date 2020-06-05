@@ -22,4 +22,7 @@ abstract class _FoodBase extends BaseStore<FoodRepository> with Store {
       .getFoodsNow()
       .where((food) => food.description.has(text))
       .toObservable();
+
+  Food getFood(int id) =>
+      repository.getFoodsNow().where((food) => food.id == id).first;
 }

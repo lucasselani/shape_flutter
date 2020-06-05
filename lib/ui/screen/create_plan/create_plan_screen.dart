@@ -7,6 +7,7 @@ import 'package:shape/ui/screen/create_plan/plan_food_item.dart';
 import 'package:shape/ui/widget/general/add_fab.dart';
 import 'package:shape/ui/widget/general/app_scaffold.dart';
 import 'package:shape/ui/widget/general/rounded_button.dart';
+import 'package:store/store.dart';
 
 class CreatePlanScreen extends StatefulWidget {
   @override
@@ -18,7 +19,11 @@ class _CreatePlanState extends State<CreatePlanScreen> {
 
   void _navigateAndWait(BuildContext context) async {
     var result = await Navigator.pushNamed(context, Routes.selectFoodScreen);
-    result ?? foods.add(result as PlanFoods);
+    if (result != null) {
+      setState(() {
+        foods.add(result as PlanFoods);
+      });
+    }
   }
 
   @override
@@ -46,15 +51,20 @@ class _PlanOverview extends StatelessWidget {
 }
 
 class _PlanFoods extends StatelessWidget {
-  final List<PlanFoods> foods;
+  final FoodStore store = GetIt.I<FoodStore>();
+  final List<PlanFoods> planFoods;
 
-  _PlanFoods(this.foods);
+  _PlanFoods(this.planFoods);
 
   @override
   Widget build(BuildContext context) => Expanded(
         child: ListView.builder(
-            itemCount: foods.length,
-            itemBuilder: (_, index) => PlanFoodItem(food: foods[index])),
+            itemCount: planFoods.length,
+            itemBuilder: (_, index) {
+              var planFood = planFoods[index];
+              return PlanFoodItem(
+                  planFood: planFood, food: store.getFood(planFood.foodId));
+            }),
       );
 }
 

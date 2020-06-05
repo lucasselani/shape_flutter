@@ -39,7 +39,7 @@ class _SearchBarState extends State<SearchBar> {
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 8.0),
             child: TextField(
-              style: Styles.title(biggerFont: true),
+              style: Styles.label(biggerFont: true),
               decoration: _buildInputDecoration(),
               onChanged: (String text) => onSearch(text),
             ),

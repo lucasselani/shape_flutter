@@ -11,6 +11,9 @@ import 'foods_item.dart';
 
 class FoodsObserver extends StoreObserver<ObservableList<Food>> {
   final FoodStore store = GetIt.I<FoodStore>();
+  final isPicking;
+
+  FoodsObserver({this.isPicking = false});
 
   @override
   Widget builder(ObservableList<Food> foods) => SafeArea(
@@ -21,7 +24,7 @@ class FoodsObserver extends StoreObserver<ObservableList<Food>> {
                 child: ListView.builder(
                     itemCount: foods.length,
                     itemBuilder: (_, int index) =>
-                        FoodsItem(food: foods[index]))),
+                        FoodsItem(food: foods[index], isPicking: isPicking))),
           ],
         ),
       );

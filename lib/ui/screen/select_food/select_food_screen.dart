@@ -5,6 +5,6 @@ import 'package:shape/ui/widget/general/app_scaffold.dart';
 
 class SelectFoodScreen extends StatelessWidget {
   @override
-  Widget build(BuildContext context) =>
-      AppScaffold(Strings.selectFoodTitle, child: FoodsObserver());
+  Widget build(BuildContext context) => AppScaffold(Strings.selectFoodTitle,
+      child: FoodsObserver(isPicking: true));
 }

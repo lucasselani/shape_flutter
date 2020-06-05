@@ -43,10 +43,11 @@ class PlanFoodsAdapter extends TypeAdapter<PlanFoods> {
     var fields = <int, dynamic>{
       for (var i = 0; i < numOfFields; i++) reader.readByte(): reader.read(),
     };
-    return PlanFoods()
-      ..foodId = fields[0] as int
-      ..quantity = fields[1] as int
-      ..unit = fields[2] as String;
+    return PlanFoods(
+      foodId: fields[0] as int,
+      quantity: fields[1] as int,
+      unit: fields[2] as String,
+    );
   }
 
   @override

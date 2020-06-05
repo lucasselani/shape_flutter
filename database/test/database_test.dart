@@ -11,13 +11,7 @@ void main() {
 
   Plan _createPlan() => Plan(
       name: 'TestPlan',
-      foods: List.filled(
-          3,
-          PlanFoods()
-            ..name = 'Test'
-            ..foodId = 1
-            ..quantity = 100
-            ..unit = 'g'));
+      foods: List.filled(3, PlanFoods(foodId: 1, quantity: 100, unit: 'g')));
 
   test('create box', () async {
     await AppHive.initialize();
